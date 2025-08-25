@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NotebookLM: The Generative Media Pipelines</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F0F4F8;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .flow-box {
+            border: 2px solid #4A5568;
+            background-color: #FFFFFF;
+            color: #1A202C;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            text-align: center;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            transition: transform 0.2s;
+        }
+        .flow-box:hover {
+            transform: translateY(-5px);
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            color: #4A5568;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0.5rem;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-5xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Deconstructing NotebookLM</h1>
+            <p class="text-lg md:text-xl text-gray-600">A Visual Deep Dive into AI-Powered Media Generation</p>
+        </header>
+
+        <section id="introduction" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-center text-[#003f5c]">The Foundation: Source-Grounded AI</h2>
+            <p class="text-gray-700 mb-6">
+                NotebookLM is not a general-purpose chatbot. Its power comes from being "source-grounded," meaning it reasons exclusively on the documents you provide. This architecture, powered by Google's Gemini models, minimizes errors and ensures all outputs, from simple summaries to complex media, are verifiably tied to your information. This infographic explores the sophisticated pipelines that build upon this foundation to generate dynamic audio and video content.
+            </p>
+            <div class="chart-container h-64 md:h-80">
+                <canvas id="coreModelsChart"></canvas>
+            </div>
+            <p class="text-center text-gray-600 mt-4">
+                This chart illustrates the ecosystem of specialized Google AI models orchestrated by NotebookLM. While Gemini provides the core reasoning, other models are tasked with specific functions like voice synthesis, image generation, and video composition, forming a powerful multi-agent system.
+            </p>
+        </section>
+
+        <section id="audio-pipeline" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-center text-[#58508d]">The Audio Overview Pipeline: Crafting a Podcast</h2>
+            <p class="text-gray-700 mb-6">
+                The "Audio Overview" feature transforms your documents into a conversational podcast. This isn't a simple text-to-speech conversion; it's a multi-stage process that scripts, refines, and "humanizes" a dialogue before rendering it with a state-of-the-art voice model. The goal is to create an engaging, natural-sounding discussion that's easy to consume on the go.
+            </p>
+            <div class="w-full overflow-x-auto p-2">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="flow-box w-full md:w-1/4"><strong>1. Outline & Revise</strong><br>Gemini creates a high-level outline of key themes from the sources.</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div>
+                    <div class="flow-arrow block md:hidden">&darr;</div>
+                    <div class="flow-box w-full md:w-1/4"><strong>2. Script Dialogue</strong><br>A detailed conversational script is generated between two AI personas.</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div>
+                    <div class="flow-arrow block md:hidden">&darr;</div>
+                    <div class="flow-box w-full md:w-1/4"><strong>3. Humanize & Refine</strong><br>Linguistic disfluencies ('ums', 'ahs', pauses) are added to the script for naturalism.</div>
+                    <div class="flow-arrow hidden md:block">&rarr;</div>
+                    <div class="flow-arrow block md:hidden">&darr;</div>
+                    <div class="flow-box w-full md:w-1/4 bg-[#ffa600] text-white border-[#ffa600]"><strong>4. Synthesize Audio</strong><br>The final script is rendered into high-fidelity audio using the SoundStorm model.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="video-pipeline" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-center text-[#bc5090]">The Video Overview Pipeline: AI-Narrated Slides</h2>
+            <p class="text-gray-700 mb-6">
+                Generating a "Video Overview" is a far more complex orchestration. The system creates a visual storyboard, writes a narration script, and then intelligently sources visuals. It follows a "retrieve first, generate second" principle: it extracts existing images and charts from your documents before creating new, original visuals with an image model to fill any gaps.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+                <div class="flow-box md:col-span-1"><strong>1. Storyboard & Script</strong><br>Gemini analyzes sources to create a narrative flow and a voiceover script.</div>
+                <div class="flow-arrow hidden md:block -rotate-90 md:rotate-0">&rarr;</div>
+                <div class="flow-arrow block md:hidden">&darr;</div>
+                <div class="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flow-box flex flex-col items-center justify-center">
+                        <span class="text-lg font-semibold">2a. Extract Visuals</span>
+                        <p class="text-sm mt-2">Gemini scans documents for existing images, charts, and quotes.</p>
+                    </div>
+                    <div class="flow-box flex flex-col items-center justify-center">
+                        <span class="text-lg font-semibold">2b. Generate Visuals</span>
+                        <p class="text-sm mt-2">The Imagen model creates new visuals for concepts without existing assets.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="flex justify-center my-4">
+                <div class="flow-arrow">&darr;</div>
+            </div>
+            <div class="flow-box w-full md:w-1/2 mx-auto bg-[#ff6361] text-white border-[#ff6361]"><strong>3. Compose & Render Video</strong><br>The Veo model assembles all assets, synchronizes audio, and renders the final MP4 video.</div>
+        </section>
+        
+        <section id="tech-stack" class="bg-white rounded-lg shadow-md p-6 mb-8">
+            <h2 class="text-2xl font-bold mb-4 text-center text-[#ff6361]">Comparative Technology Stack</h2>
+            <p class="text-gray-700 mb-6">
+                While both pipelines start with Gemini for reasoning, they diverge significantly by employing specialized models for their respective modalities. The Audio Overview relies on the unique capabilities of SoundStorm for human-like speech, whereas the Video Overview acts as an orchestrator, coordinating Gemini, Imagen, and Veo to synthesize a complex multimodal product.
+            </p>
+            <div class="chart-container h-96 md:h-[450px]">
+                <canvas id="techStackChart"></canvas>
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const palette = {
+                blue: '#003f5c',
+                purple: '#58508d',
+                magenta: '#bc5090',
+                red: '#ff6361',
+                orange: '#ffa600',
+                lightGray: '#a0aec0',
+                darkGray: '#4A5568'
+            };
+
+            const wrapLabel = (label, maxLength = 16) => {
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                }
+                lines.push(currentLine.trim());
+                return lines;
+            };
+
+            const tooltipTitleCallback = {
+                plugins: {
+                    tooltip: {
+                        callbacks: {
+                            title: function(tooltipItems) {
+                                const item = tooltipItems[0];
+                                let label = item.chart.data.labels[item.dataIndex];
+                                if (Array.isArray(label)) {
+                                    return label.join(' ');
+                                } else {
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            };
+
+            const coreModelsCtx = document.getElementById('coreModelsChart').getContext('2d');
+            new Chart(coreModelsCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Gemini (Reasoning)', 'SoundStorm (Audio)', 'Imagen (Image Gen)', 'Veo (Video Gen)'],
+                    datasets: [{
+                        label: 'Core AI Models',
+                        data: [40, 20, 20, 20],
+                        backgroundColor: [palette.blue, palette.purple, palette.magenta, palette.red],
+                        borderColor: '#FFFFFF',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    ...tooltipTitleCallback,
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        title: {
+                            display: true,
+                            text: 'NotebookLM\'s Generative AI Ecosystem',
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+
+            const techStackCtx = document.getElementById('techStackChart').getContext('2d');
+            new Chart(techStackCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        wrapLabel('Core Logic & Scripting'), 
+                        wrapLabel('Voice Synthesis'), 
+                        wrapLabel('Visual Asset Generation'), 
+                        wrapLabel('Final Media Assembly')
+                    ],
+                    datasets: [{
+                        label: 'Audio Overview',
+                        data: [10, 8, 0, 0],
+                        backgroundColor: palette.purple,
+                        borderColor: palette.purple,
+                        borderWidth: 1
+                    }, {
+                        label: 'Video Overview',
+                        data: [10, 4, 9, 7],
+                        backgroundColor: palette.magenta,
+                        borderColor: palette.magenta,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            title: {
+                                display: true,
+                                text: 'Relative Capability / Role'
+                            }
+                        }
+                    },
+                    ...tooltipTitleCallback,
+                    plugins: {
+                        ...tooltipTitleCallback.plugins,
+                        title: {
+                            display: true,
+                            text: 'Technology Stack by Pipeline Feature',
+                            font: { size: 16 }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
