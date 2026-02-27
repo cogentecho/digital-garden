@@ -1,3 +1,9 @@
+---
+title: Methodology
+description: 7-phase AI-assisted research workflow for producing verified intelligence.
+layout: page
+---
+
 # AI-Assisted Research Workflow
 
 A repeatable, agent-driven research pipeline that produces verified, prioritized intelligence from raw topics. The system uses multi-model orchestration, automated verification, knowledge graphs for traceability, and persistent memory systems that compound research investment across sessions.

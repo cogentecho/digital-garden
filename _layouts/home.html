@@ -1,0 +1,29 @@
+---
+layout: default
+---
+
+<div class="home-intro">
+  <h1>{{ page.title }}</h1>
+  <p>{{ page.description }}</p>
+</div>
+
+<div class="project-grid">
+  {% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/' and p.name == 'index.md'" | sort: "order" %}
+  {% for project in projects %}
+  <div class="project-card">
+    <div class="project-tags">
+      {% if project.type == "report" %}<span class="tag tag-report">Report</span>
+      {% elsif project.type == "app" %}<span class="tag tag-app">App</span>
+      {% elsif project.type == "experiment" %}<span class="tag tag-experiment">Experiment</span>
+      {% elsif project.type == "reference" %}<span class="tag tag-reference">Reference</span>
+      {% else %}<span class="tag">{{ project.type | default: "Project" }}</span>
+      {% endif %}
+      {% if project.status == "draft" %}<span class="tag">Draft</span>{% endif %}
+    </div>
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{{ content }}

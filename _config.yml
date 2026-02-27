@@ -1,0 +1,28 @@
+title: Cogent Echo Digital Garden
+description: Research, reports, and interactive explorations from Cogent Echo.
+url: https://www.cogentecho.ai
+baseurl: /digital-garden
+author: Greg Mulvihill
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+permalink: pretty
+
+exclude:
+  - archive
+  - README.md
+  - LICENSE
+  - CLAUDE.md
+  - .gitignore
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: page
+  - scope:
+      path: "projects"
+    values:
+      layout: page
