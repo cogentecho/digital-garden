@@ -2,6 +2,7 @@
 title: Methodology
 description: 7-phase AI-assisted research workflow for producing verified intelligence.
 layout: page
+permalink: /methodology/
 ---
 
 # AI-Assisted Research Workflow
