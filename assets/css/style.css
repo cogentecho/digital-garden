@@ -24,29 +24,7 @@
   --font-mono: "SF Mono", SFMono-Regular, ui-monospace, Menlo, Consolas, monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #111111;
-    --bg-card: #1a1a1a;
-    --text: #e5e5e5;
-    --text-muted: #9ca3af;
-    --border: #2d2d2d;
-    --accent: #f59e0b;
-    --accent-hover: #fbbf24;
-    --tag-bg: #262626;
-    --tag-text: #d1d5db;
-    --tag-report: #1e3a5f;
-    --tag-report-text: #93c5fd;
-    --tag-app: #064e3b;
-    --tag-app-text: #6ee7b7;
-    --tag-experiment: #451a03;
-    --tag-experiment-text: #fcd34d;
-    --tag-reference: #2e1065;
-    --tag-reference-text: #c4b5fd;
-    --shadow: 0 1px 3px rgba(0,0,0,0.3);
-    --shadow-hover: 0 4px 12px rgba(0,0,0,0.4);
-  }
-}
+/* Dark mode removed — light only for now */
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
