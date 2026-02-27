@@ -7,7 +7,8 @@ layout: default
 <div class="breadcrumb">
   <a href="{{ '/' | relative_url }}">Projects</a> /
   {% assign project_path = parts[0] | append: "/" | append: parts[1] | append: "/" | append: parts[2] | append: "/" %}
-  {% assign project_page = site.pages | where_exp: "p", "p.dir == project_path and p.name == 'index.md'" | first %}
+  {% assign project_dir_pages = site.pages | where_exp: "p", "p.dir == project_path" %}
+  {% assign project_page = project_dir_pages | where: "name", "index.md" | first %}
   {% if project_page %}<a href="{{ project_page.url | relative_url }}">{{ project_page.title }}</a> / {% endif %}
   {{ page.title }}
 </div>

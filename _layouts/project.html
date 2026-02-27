@@ -16,7 +16,8 @@ layout: default
 </div>
 
 {% assign dir = page.dir %}
-{% assign siblings = site.pages | where_exp: "p", "p.dir == dir and p.name != 'index.md' and p.title" | sort: "order" %}
+{% assign dir_pages = site.pages | where_exp: "p", "p.dir == dir" %}
+{% assign siblings = dir_pages | where_exp: "p", "p.name != 'index.md'" | sort: "order" %}
 {% if siblings.size > 0 %}
 <h2 style="margin-top: 2rem; margin-bottom: 0.75rem;">Pages</h2>
 <ul class="project-pages">

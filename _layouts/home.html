@@ -8,7 +8,8 @@ layout: default
 </div>
 
 <div class="project-grid">
-  {% assign projects = site.pages | where_exp: "p", "p.path contains 'projects/' and p.name == 'index.md'" | sort: "order" %}
+  {% assign project_pages = site.pages | where_exp: "p", "p.path contains 'projects/'" %}
+  {% assign projects = project_pages | where: "name", "index.md" | sort: "order" %}
   {% for project in projects %}
   <div class="project-card">
     <div class="project-tags">
