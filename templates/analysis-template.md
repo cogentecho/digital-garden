@@ -58,4 +58,4 @@
 
 ---
 
-*This analysis was generated following the Cogent Echo Protocol for transparent AI research. All sources, prompts, and verification steps are documented in the verification/ directory.*
+*This analysis was generated following the Cogent Echo Protocol for transparent AI research. See [METHODOLOGY.md](../../METHODOLOGY.md) for the full research workflow.*

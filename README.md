@@ -17,6 +17,7 @@ Cogent Echo is a research initiative dedicated to analyzing the most critical de
 | **YouTube** | Watch video reports, analyses, and deep dives on our official channel. | **[Watch on YouTube](https://www.youtube.com/@cogentecho)** |
 | **Podcast** | Listen to the audio versions of our reports on Spotify. Ideal for on-the-go learning. | **[Listen on Spotify](https://open.spotify.com/show/3kbjo7KGPrgJltsta5KbGY?si=KTk-mbbJSKKy7wQhbQ3Xhg)** |
 | **Research Garden** | Access the complete archive of all research reports, primary sources, and verification logs. | **[Explore the Archive](https://github.com/cogentecho/digital-garden)** |
+| **Methodology** | Our 7-phase AI-assisted research pipeline for producing verified, prioritized intelligence. | **[Read the Methodology](METHODOLOGY.md)** |
 
 ---
 

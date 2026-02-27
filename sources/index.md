@@ -1,67 +1,27 @@
 # Sources Index
 
-*Last updated: [Date]*
+Shared source library for the Cogent Echo Digital Garden. Sources referenced across multiple episodes are catalogued here to avoid duplication.
 
-## Quick Stats
-- Total sources: 0
-- Papers: 0
-- Articles: 0
-- Datasets: 0
-- Expert interviews: 0
+## Source Quality Tiers
 
-## By Topic
-
-### AI Models
-| Source | Type | Date | Used In |
-|--------|------|------|--------|
-| | | | |
-
-### AI Safety
-| Source | Type | Date | Used In |
-|--------|------|------|--------|
-| | | | |
-
-### Industry Analysis
-| Source | Type | Date | Used In |
-|--------|------|------|--------|
-| | | | |
-
-## High-Value Sources
-
-### Recurring Expert Sources
-- **[Expert Name]** - [Title/Affiliation] - Episodes: [List]
-- **[Expert Name]** - [Title/Affiliation] - Episodes: [List]
-
-### Key Papers Referenced Multiple Times
-- **[Paper Title]** - [Authors] - Referenced in: [Episode list]
-- **[Paper Title]** - [Authors] - Referenced in: [Episode list]
-
-## Source Quality Guidelines
-
-**Tier 1 (High Confidence)**
+**Tier 1 — High Confidence**
 - Peer-reviewed research
 - Official company announcements
 - Direct expert interviews
 - Government reports
 
-**Tier 2 (Medium Confidence)**  
+**Tier 2 — Medium Confidence**
 - Reputable journalism
 - Industry analyst reports
 - Conference presentations
 - Expert social media with context
 
-**Tier 3 (Use with Caution)**
+**Tier 3 — Use with Caution**
 - Unverified claims
 - Single-source reports
 - Anonymous sources
 - Speculation/opinion pieces
 
-## Acquisition Notes
+## By Topic
 
-### Sources to Acquire
-- [ ] [Paper/Resource name] - [Why needed]
-- [ ] [Paper/Resource name] - [Why needed]
-
-### Access Challenges
-- **[Resource]** - Behind paywall, seeking institutional access
-- **[Resource]** - Waiting for author response
+Sources will be catalogued here as the archive grows. Each entry should include: source title, type, date, and which episodes reference it.

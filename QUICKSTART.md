@@ -2,82 +2,62 @@
 
 ## Creating a New Episode
 
-1. **Create episode directory:**
+1. **Create the date directory:**
    ```bash
-   mkdir episodes/2024/001-topic-name
-   cd episodes/2024/001-topic-name
+   mkdir -p episodes/2025/08/25
    ```
 
-2. **Copy template:**
+2. **Write the analysis** directly in the date directory using a descriptive filename:
    ```bash
-   cp ../../../templates/episode-readme.md README.md
+   # Single-file episode — just the analysis
+   cp templates/analysis-template.md "episodes/2025/08/25/Analysis of Topic Title.md"
    ```
 
-3. **Create subdirectories:**
+3. **For multi-file episodes** (transcript, source URLs, etc.), create a subdirectory:
    ```bash
-   mkdir sources sources/papers sources/articles sources/data sources/media
-   mkdir outputs verification
+   mkdir "episodes/2025/08/25/Topic Title"
+   cp templates/analysis-template.md "episodes/2025/08/25/Topic Title/An Analytical Review of Topic Title.md"
    ```
+   Add transcripts, `.url` files, and other supporting materials alongside the analysis.
 
-4. **Start research:**
-   - Add sources to `sources/` with naming convention: `type_YYYY-MM-DD_description.ext`
-   - Update `sources/index.md` with new sources
-   - Fill out episode README.md metadata
+4. **Follow the Cogent Echo Protocol** when writing the analysis:
+   - Fill in findings with evidence and confidence levels
+   - Add source citations
+   - Complete the verification checklist
+   - See [METHODOLOGY.md](METHODOLOGY.md) for the full 7-phase research pipeline
 
-5. **Generate analysis:**
-   ```bash
-   cp ../../../templates/analysis-template.md analysis.md
-   ```
-   - Fill in analysis based on sources
-   - Document AI prompts in `verification/ai-prompts.md`
+## Research Workflow
 
-## Backfilling Existing Podcasts
+Active research lives in `research/in-progress/`. When a research project becomes an episode, move it to `episodes/YYYY/MM/DD/`.
 
-1. **Identify all published episodes** (YouTube/Spotify)
-2. **Create directories chronologically** starting with earliest
-3. **For each episode:**
-   - Create README.md with platform links
-   - Add transcript if available
-   - Reconstruct source list
-   - Create analysis.md summarizing key points
-   - Mark verification_status as "legacy" if not fully verifiable
+For the complete AI-assisted research pipeline — from curated prompts through knowledge graph construction to personalized ranking — see [METHODOLOGY.md](METHODOLOGY.md).
 
 ## File Naming Examples
 
+**Single-file episode:**
 ```
-episodes/2024/001-gpt-4-analysis/
-├── README.md
-├── transcript.md  
-├── analysis.md
-├── sources/
-│   ├── paper_2024-03-14_gpt-4-technical-report.pdf
-│   ├── article_2024-03-15_openai-announcement.md
-│   └── data_2024-03-10_benchmark-results.csv
-├── outputs/
-│   ├── video.md
-│   └── social.md
-└── verification/
-    ├── fact-check.md
-    ├── ai-prompts.md
-    └── changes.md
+episodes/2025/08/13/An Analytical Review of Topic Title.md
+```
+
+**Multi-file episode:**
+```
+episodes/2025/08/14/Forget Network Layers — Cortical Columns Think Like Graphs/
+├── An Analytical Audit of 'Forget Network Layers...'.md
+├── Transcript - Cortical Columns as Graphs.md
+└── Forget Network Layers — YouTube.url
 ```
 
 ## Daily Workflow
 
-1. **Source Collection:** Save interesting sources to appropriate `sources/` subdirectory
-2. **Topic Tracking:** Update `sources/index.md` when adding sources
-3. **Episode Development:** Use `research/in-progress/` for developing episodes
-4. **Publication:** Move completed research to `episodes/YYYY/NNN-topic/`
-5. **Cross-linking:** Update related episodes and topic indexes
+1. **Source Collection:** Save interesting sources and update `sources/index.md`
+2. **Research:** Develop ideas in `research/in-progress/`
+3. **Publish:** Move completed work to `episodes/YYYY/MM/DD/`
 
-## Maintenance Tasks
+## Maintenance
 
 ### Weekly
-- Update `sources/index.md` with new additions
 - Review `research/in-progress/` for stalled projects
-- Check verification status of recent episodes
+- Update `sources/index.md` with new additions
 
-### Monthly  
-- Archive completed research projects
-- Update topic indexes for discoverability
+### Monthly
 - Review and update templates based on lessons learned
